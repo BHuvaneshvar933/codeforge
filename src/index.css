@@ -1,0 +1,266 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+/* Remove all the default Vite styles (lines 1-68) and replace with: */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 p-0 min-h-screen w-full font-sans transition-colors duration-200;
+    display: block; /* Fix for the flex layout causing centering issues */
+  }
+  
+  .dark body {
+    @apply text-gray-200 bg-dark-bg;
+  }
+  
+  .light body {
+    @apply text-gray-800 bg-white;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+  
+  .light ::-webkit-scrollbar-track {
+    @apply bg-gray-200;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-indigo-600 rounded-full hover:bg-indigo-700;
+  }
+  
+  .light ::-webkit-scrollbar-thumb {
+    @apply bg-indigo-400 rounded-full hover:bg-indigo-500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 ease-in-out;
+  }
+  
+  .dark .btn-primary {
+    @apply bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800;
+  }
+  
+  .light .btn-primary {
+    @apply bg-indigo-500 text-white hover:bg-indigo-600 active:bg-indigo-700;
+  }
+  
+  .dark .btn-secondary {
+    @apply bg-gray-700 text-white hover:bg-gray-800 active:bg-gray-900;
+  }
+  
+  .light .btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 active:bg-gray-400;
+  }
+  
+  .card {
+    @apply rounded-lg shadow-md overflow-hidden transition-all duration-200 hover:shadow-xl;
+  }
+  
+  .dark .card {
+    @apply bg-dark-card border-gray-800;
+  }
+  
+  .light .card {
+    @apply bg-white border-gray-200;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .dark .glass-effect {
+    @apply bg-opacity-20 backdrop-filter backdrop-blur-lg bg-gray-800 border border-gray-700 border-opacity-40;
+  }
+  
+  .light .glass-effect {
+    @apply bg-opacity-30 backdrop-filter backdrop-blur-lg bg-white border border-gray-200 border-opacity-60 shadow-sm;
+  }
+  
+  /* New styles for the 099.supply-like design */
+  .product-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+  }
+  
+  .minimal-card {
+    @apply rounded-none border-0 shadow-none hover:shadow-none;
+  }
+  
+  .dark .minimal-card {
+    @apply bg-dark-bg;
+  }
+  
+  .light .minimal-card {
+    @apply bg-white;
+  }
+  
+  .price-tag {
+    @apply inline-block px-2 py-1 text-sm font-medium rounded;
+  }
+  
+  .dark .price-tag {
+    @apply bg-gray-800 text-white;
+  }
+  
+  .light .price-tag {
+    @apply bg-gray-100 text-gray-800;
+  }
+  
+  .product-title {
+    @apply text-base font-medium mt-2 truncate;
+  }
+  
+  .dark .product-title {
+    @apply text-gray-200;
+  }
+  
+  .light .product-title {
+    @apply text-gray-800;
+  }
+  
+  /* Remove these problematic selectors */
+  /* .dark .bg-dark-bg {
+    @apply bg-dark-bg;
+  }
+  
+  .light .bg-dark-bg {
+    @apply bg-white;
+  }
+  
+  .dark .bg-dark-card {
+    @apply bg-dark-card;
+  }
+  
+  .light .bg-dark-card {
+    @apply bg-gray-50;
+  } */
+  
+  /* Fix circular dependencies by using direct color values instead of class selectors */
+  .dark-mode-text-primary {
+    color: rgb(229, 231, 235); /* text-gray-200 equivalent */
+  }
+  
+  .light-mode-text-primary {
+    color: rgb(31, 41, 55); /* text-gray-800 equivalent */
+  }
+  
+  .dark-mode-text-secondary {
+    color: rgb(156, 163, 175); /* text-gray-400 equivalent */
+  }
+  
+  .light-mode-text-secondary {
+    color: rgb(75, 85, 99); /* text-gray-600 equivalent */
+  }
+  
+  .dark-mode-border {
+    border-color: rgb(31, 41, 55); /* border-gray-800 equivalent */
+  }
+  
+  .light-mode-border {
+    border-color: rgb(229, 231, 235); /* border-gray-200 equivalent */
+  }
+  
+  /* Add these utility classes for backgrounds */
+  .dark-mode-bg {
+    background-color: #0f172a; /* dark-bg equivalent */
+  }
+  
+  .light-mode-bg {
+    background-color: #ffffff; /* white equivalent */
+  }
+  
+  .dark-mode-card-bg {
+    background-color: #1e293b; /* dark-card equivalent */
+  }
+  
+  .light-mode-card-bg {
+    background-color: #f9fafb; /* gray-50 equivalent */
+  }
+}
