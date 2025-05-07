@@ -1,12 +1,38 @@
-# React + Vite
+# CodeForge E-commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce platform built with React, featuring a clean UI, dark/light mode, and a seamless shopping experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design**: Fully responsive layout that works on mobile, tablet, and desktop devices
+- **Dark/Light Mode**: Toggle between dark and light themes based on user preference
+- **Product Catalog**: Browse products with filtering and search capabilities
+- **Product Details**: View detailed information about each product
+- **Shopping Cart**: Add products to cart, update quantities, and remove items
+- **Checkout Process**: Multi-step checkout with shipping and payment information
+- **Animations**: Smooth transitions and animations using Framer Motion
+- **Mock API**: Uses local mock data to simulate backend functionality
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**: Frontend library for building user interfaces
+- **React Router**: For navigation and routing
+- **Context API**: For state management (theme, cart)
+- **Tailwind CSS**: For styling and responsive design
+- **Framer Motion**: For animations and transitions
+- **Vite**: For fast development and building
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/codeForge.git
+   cd codeForge
+   ```
